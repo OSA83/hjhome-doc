@@ -27,12 +27,12 @@ mqtt, fan, вытяжка, /wemos5/in/rele16, /wemos5/out/rele16,,,,,,
 # mqtt, temp, кухня,, /wemos12/out/temp5,,,,,,
 mqtt, temp, коридор,, /wemos44/out/temp5,,,,,,
 mqtt, hum, влажность,, /wemos1/out/hum4,,,,,,
-mqtt, term, termoreg,, /wemos1/out/temp4,,, /wemos1/in/rele16, /wemos1/out/rele16,,
 mqtt, leak, Кухня,, /wemos60/out/bt0,,,,,,
 mqtt, leak, Туалет,, /wemos61/out/bt0,,,,,,
 mqtt, leak, Ванная,, /wemos62/out/bt0,,,,,,
 mqtt, motion, Коридор,, /wemos3/out/bt0,,,,,,
-
+#					Терморегулятор
+mqtt, term, termoreg,, /wemos1/out/temp4,,, /wemos1/in/rele16, /wemos1/out/rele16,,
 #					РОЗЕТКИ
 # mqtt, outlet, outlet, /wemos1/in/rele14, /wemos1/out/rele14,,,,,,
 
