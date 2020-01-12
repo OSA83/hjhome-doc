@@ -11,19 +11,19 @@
 # dimm: 1
 sys, type, name, comm, stat, comm1, stat1, comm2, stat2, comm3, stat3
 
-# 					ВЫКЛЮЧАТЕЛЬ СВЯЗАННЫЙ С НАГРУЗКОЙ БЕЗ HOMEKIT
+# 					SHORT PUSH SWITCH
 # mqtt, short, short1, /wemos44/in/rele16, /wemos44/out/bt2,,,,,,
 # mqtt, short, short2, /wemos44/in/rele14, /wemos44/out/bt0,,,,,,
 # mqtt, short, short3, /wemos1/in/rele14, /wemos1/out/bt0,,,,,,
 # mqtt, short, short5, /wemos5/in/rele14. /wemos5/in/rele16. /wemos11/in/rele14, /wemos12/out/bt12,,,,,,
 
-#					ВЫКЛЮЧАТЕЛЬ С ДОЛГИМ НАЖАТИЕМ
+#					LONG PUSH SWITCH
 mqtt, switch, long,, /wemos12/out/bt12,,,,,,
 
-#					ВЕНТИЛЯТОРЫ
+#					FANS
 mqtt, fan, вытяжка, /wemos5/in/rele16, /wemos5/out/rele16,,,,,,
 
-# 					СЕНСОРЫ
+# 					SENSORS
 # mqtt, temp, кухня,, /wemos12/out/temp5,,,,,,
 mqtt, temp, коридор,, /wemos44/out/temp5,,,,,,
 mqtt, hum, влажность,, /wemos1/out/hum4,,,,,,
@@ -33,10 +33,10 @@ mqtt, leak, Туалет,, /wemos61/out/bt0,,,,,,
 mqtt, leak, Ванная,, /wemos62/out/bt0,,,,,,
 mqtt, motion, Коридор,, /wemos3/out/bt0,,,,,,
 
-#					РОЗЕТКИ
+#					OUTLET
 # mqtt, outlet, outlet, /wemos1/in/rele14, /wemos1/out/rele14,,,,,,
 
-#					ЛАМПЫ
+#					LAMPS
 mqtt, lamp, детская, /wemos1/in/rele14, /wemos1/out/rele14,,,,,,
 # mqtt, lamp, рабочая-зона, /wemos5/in/rele14, /wemos5/out/rele14,,,,,,
 # mqtt, lamp, кухня, /wemos11/in/rele14, /wemos11/out/rele14,,,,,,
@@ -51,7 +51,10 @@ mqtt, blinds, штора-кухня, /wemos50/in/shut15, /wemos50/out/shut15, 9,
 # mqtt, blinds, штора-гостиная, /wemos52/in/shut15, /wemos52/out/shut15, 9,,,,,,
 # mqtt, blinds, штора-спальня, /wemos53/in/shut15, /wemos53/out/shut15, 9,,,,,,
 
- Основной1, 0/4/8, 0/4/9,,,,,,
+############### KNX ############################
+
+knx, short, sw1, 0/0/1. 0/0/2, 0/0/3,,,,,,
+knx, switch, sw2,, 0/0/3,,,,,,
 # knx, dimm_lamp, Основной2, 0/4/10, 0/4/11,,,,,,
 # knx, temp, датчик,, 2/0/4,,,,,,
 # knx, term, term, 2/0/6, 2/0/4, 2/0/2, 2/0/3, 2/0/0, 2/0/1, 2/0/7, 2/0/8,
