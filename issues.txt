@@ -1,6 +1,13 @@
-Name: Issue template
-Data: 18-Jan-20
-Description: This is example of issue
-Acceptance criteria: It must known
+Date: 18-Jan-20
+Name: Fill new markdown files
+Description: Add description to the installation.md, accessories.md
+Acceptance criteria: Descriptions must added to the files
+Result:
+---
+Date: 18-Jan-20
+Name: New version hjhome-18-Jan-20_2349.tgz Added knx short, switch
+Description: Added knx short and switch
+Acceptance criteria: Should tested and Added descriptions to accessories.md file
+Result:
 ---
 
