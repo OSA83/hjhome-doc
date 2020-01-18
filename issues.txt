@@ -1,0 +1,6 @@
+Name: Issue template
+Data: 18-Jan-20
+Description: This is example of issue
+Acceptance criteria: It must known
+---
+
