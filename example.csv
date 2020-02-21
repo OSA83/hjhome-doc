@@ -16,58 +16,65 @@ sys, type, name, comm, stat, comm1, stat1, comm2, stat2, comm3, stat3
 
 # 					ВЫКЛЮЧАТЕЛЬ СВЯЗАННЫЙ С НАГРУЗКОЙ БЕЗ HOMEKIT
 # comm - управляемый элемент (реле), stat - управляющая переменная (статус выключателя). Аксессуар HomeKit - отсутствует.
-# mqtt, short, short1, /wemos44/in/rele16, /wemos44/out/bt2,,,,,,
+mqtt, short, short-mqtt, 0/0/9. /wemos44/in/rele16, /wemos44/out/bt2,,,,,,
+knx, short, short-knx, 0/0/9. /wemos44/in/rele16, 0/0/12,,,,,,
 
 #					ВЫКЛЮЧАТЕЛЬ С ДОЛГИМ НАЖАТИЕМ
 # stat - управляющая переменная (статус выключателя после долгово нажатия). Аксессуар HomeKit - switch.
-# mqtt, switch, long,, /wemos12/out/bt12,,,,,,
+mqtt, switch, long-mqtt,, /wemos12/out/bt12,,,,,,
+knx, switch, long-knx,, 0/0/10,,,,,,
 
 #					ВЕНТИЛЯТОРЫ
 # comm - адрес реле вентилятора, stat - cтатус реле вентилятора. Аксессуар HomeKit - fan.
-# mqtt, fan, вытяжка, /wemos5/in/rele16, /wemos5/out/rele16,,,,,,
+mqtt, fan, fan-mqtt, /wemos5/in/rele16, /wemos5/out/rele16,,,,,,
+knx, fan, fan-knx, 0/0/9, 0/0/10,,,,,,
 
 # 					ДАТЧИК ТЕМПЕРАТУРЫ
 # stat - адрес текущуй температуры. Аксессуар HomeKit - temp.
-# mqtt, temp, кухня,, /wemos12/out/temp5,,,,,,
-# knx, temp, датчик,, 2/0/4,,,,,,
+mqtt, temp, temp-mqtt,, /wemos12/out/temp5,,,,,,
+knx, temp, temp-knx,, 2/0/4,,,,,,
 
 #					ДАТЧИК ВЛАЖНОСТИ
 # stat - адрес текущуй влажности. Аксессуар HomeKit - humidity.
-# mqtt, hum, влажность,, /wemos1/out/hum4,,,,,,
+mqtt, hum, hum-mqtt,, /wemos1/out/hum4,,,,,,
+knx, hum, hum-knx,, 0/0/20,,,,,,
 
 #					ДАТЧИК УТЕЧКИ ВОДЫ
-# stat - статус контакта. Аксессуар HomeKit - leak.
+#stat - статус контакта. Аксессуар HomeKit - leak.
+mqtt, leak, leak-mqtt,, /wemos3/out/bt0,,,,,,
+knx, leak, leak-knx,, 0/0/10,,,,,,
 
 #					ДАТЧИК ДВИЖЕНИЯ
 # stat - статус контакта. Аксессуар HomeKit - motion.
-# mqtt, motion, Коридор,, /wemos3/out/bt0,,,,,,
+mqtt, motion-mqtt, Коридор,, /wemos3/out/bt0,,,,,,
+knx, motion-knx, Коридор,, 0/0/10,,,,,,
 
 #					Терморегулятор
 # comm - режим работы (нагрев/охлаждение) , stat - текущая температура (датчик), comm1 - уставка, stat1 - статус уставки, comm2 - команда (отопление) , stat2 - статус (отопление), comm3 - команда (охлаждение), stat3 - статус (охлаждение)
-# mqtt, term, termoreg,, /wemos1/out/temp4,,, /wemos1/in/rele16, /wemos1/out/rele16, /wemos1/in/rele14, /wemos1/out/rele14
-# knx, term, term, 2/0/6, 2/0/4, 2/0/2, 2/0/3, 2/0/0, 2/0/1, 2/0/7, 2/0/8
+mqtt, term, termoreg-knx,, /wemos1/out/temp4,,, /wemos1/in/rele16, /wemos1/out/rele16, /wemos1/in/rele14, /wemos1/out/rele14
+knx, term, termoreg-knx, 2/0/6, 2/0/4, 2/0/2, 2/0/3, 2/0/0, 2/0/1, 2/0/7, 2/0/8
 
 #					РОЗЕТКИ
 # comm - адрес реле розетки, stat - cтатус реле розетки. Аксессуар HomeKit - outlet.
-# mqtt, outlet, outlet1, /wemos1/in/rele14, /wemos1/out/rele14,,,,,,
-# knx, outlet, outlet2, 0/0/9, 0/0/10,,,,,,
+mqtt, outlet, outlet-mqtt, /wemos1/in/rele14, /wemos1/out/rele14,,,,,,
+knx, outlet, outlet-knx, 0/0/9, 0/0/10,,,,,,
 
 #					ЛАМПА ВКЛ/ВЫКЛ
 # comm - адрес реле светильника, stat - cтатус реле светильника. Аксессуар HomeKit - light.
-# mqtt, lamp, mqtt_lamp, /wemos1/in/rele14, /wemos1/out/rele14,,,,,,
-# knx, lamp, knx_lamp, 0/0/9, 0/0/10,,,,,,
+mqtt, lamp, lamp-mqtt, /wemos1/in/rele14, /wemos1/out/rele14,,,,,,
+knx, lamp, lamp-knx, 0/0/9, 0/0/10,,,,,,
 
 #					ЛАМПА ДИММИРУЕМАЯ
 # comm - команда диммирования 1 байт, stat - cтатус диммирования 1 байт. Аксессуар HomeKit - lighthub.
-# mqtt, dimm_lamp, mqtt_диммер, /wemos4/in/pwm12, /wemos4/out/pwm12,,,,,,
-# knx, dimm_lamp, knx_диммер, 0/4/6, 0/4/7,,,,,,
+mqtt, dimm_lamp, dimm-mqtt, /wemos4/in/pwm12, /wemos4/out/pwm12,,,,,,
+knx, dimm_lamp, dimm-knx, 0/4/6, 0/4/7,,,,,,
 
 					RGB
 # comm - общая команда вкл/выкл , stat - статус вкл/выкл, comm1 - уровень яркости (R), stat1 - статус яркости (R), comm2 - уровень яркости (G), stat2 - статус яркости (G), comm3 - уровень яркости (B), stat3 - статус яркости (B)
-# knx, rgb_lamp,rgbtest,0/2/2,0/2/3,0/5/4,0/5/5,0/5/6,0/5/7,0/5/8,0/5/9
+knx, rgb_lamp,rgb-knx,0/2/2,0/2/3,0/5/4,0/5/5,0/5/6,0/5/7,0/5/8,0/5/9
 
 #					Шторы
 # comm - команда открыть/закрыть 1 байт, stat - cтатус открытия 1 байт, comm1 - время открытия в секундах (для KNX устройств, время открытия задается через ETS). Аксессуар HomeKit - shutters.
-# mqtt, blinds, штора-кухня, /wemos7/in/shut15, /wemos7/out/shut15, 9,,,,,,
-# mqtt, blinds, шторатест, /wemos5/in/somfy11, /wemos5/out/somfy11, 9,,,,,,
-# knx, blinds, штора, 1/1/0, 1/1/1,,,,,,,
+mqtt, blinds, blinds-shut-mqtt, /wemos7/in/shut15, /wemos7/out/shut15, 9,,,,,,
+mqtt, blinds, blinds-somfy-mqtt, /wemos5/in/somfy11, /wemos5/out/somfy11, 9,,,,,,
+knx, blinds, blindt-knx, 1/1/0, 1/1/1,,,,,,,
